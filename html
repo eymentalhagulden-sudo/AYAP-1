@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYAP-1: Ay Görevi</title>
+    <style>
+        /* Genel Stiller */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #0b0d17; /* Uzay siyahı */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigasyon */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 5%;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 90%;
+            z-index: 1000;
+        }
+
+        .logo { font-weight: bold; font-size: 1.5rem; color: #4cc9f0; }
+
+        /* Hero Bölümü */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, #1b2735 0%, #090a0f 100%);
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 4rem; margin-bottom: 10px; color: #f8f9fa; }
+        .hero p { font-size: 1.2rem; max-width: 600px; color: #adb5bd; }
+
+        .btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #4cc9f0;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover { background-color: #4361ee; transform: scale(1.05); }
+
+        /* Özellikler Bölümü */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 100px 10%;
+        }
+
+        .card {
+            background: #161b22;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #30363d;
+            text-align: center;
+        }
+
+        .card h3 { color: #4cc9f0; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">AYAP-1 PROJECT</div>
+        <div>
+            <a href="#about" style="color: white; text-decoration: none; margin-left: 20px;">Hakkında</a>
+            <a href="#media" style="color: white; text-decoration: none; margin-left: 20px;">Galeri</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>AYAP-1: Sonsuz Boşluk</h1>
+        <p>Türkiye'nin Ay Araştırma Programı'ndan esinlenen, gerçekçi fizik tabanlı bir uzay simülasyonu deneyimi.</p>
+        <a href="#" class="btn">Hemen Oyna</a>
+    </header>
+
+    <section class="features" id="about">
+        <div class="card">
+            <h3>Gerçekçi Görevler</h3>
+            <p>AYAP-1 aracını yörüngeye oturt ve Ay yüzeyine güvenli bir iniş yap.</p>
+        </div>
+        <div class="card">
+            <h3>Detaylı Grafikler</h3>
+            <p>Ay'ın karanlık yüzünü ve kraterlerini en ince ayrıntısına kadar keşfet.</p>
+        </div>
+        <div class="card">
+            <h3>Teknofest 2026</h3>
+            <p>Geleceğin teknolojilerini bugünden kodla ve sınırları zorla.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AYAP-1 Oyun Projesi. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>
