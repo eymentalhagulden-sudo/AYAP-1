@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AYAP-1: Ay Görevi</title>
+    <title>İstikbal Uzay - Hikaye Sahnesi</title>
     <style>
-        /* Genel Stiller */
+        /* Genel Stiller (Önceki koddan) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: #0b0d17; /* Uzay siyahı */
+            background-color: #0b0d17;
             color: #ffffff;
             line-height: 1.6;
         }
 
-        /* Navigasyon */
         nav {
             display: flex;
             justify-content: space-between;
+            align-items: center; /* Logoyu ve linkleri ortala */
             padding: 20px 5%;
             background: rgba(0, 0, 0, 0.8);
             position: fixed;
@@ -25,9 +25,8 @@
             z-index: 1000;
         }
 
-        .logo { font-weight: bold; font-size: 1.5rem; color: #4cc9f0; }
+        .logo { font-weight: bold; font-size: 1.5rem; color: #4cc9f0; text-transform: uppercase; }
 
-        /* Hero Bölümü */
         .hero {
             height: 100vh;
             display: flex;
@@ -55,7 +54,6 @@
 
         .btn:hover { background-color: #4361ee; transform: scale(1.05); }
 
-        /* Özellikler Bölümü */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -73,7 +71,79 @@
 
         .card h3 { color: #4cc9f0; }
 
-        /* Footer */
+        /* --- YENİ GALERİ BÖLÜMÜ SİTİLLERİ --- */
+        .gallery {
+            padding: 100px 10%;
+            background-color: #11141f; /* Hafif farklı bir koyu ton */
+        }
+
+        .gallery h2 {
+            text-align: center;
+            color: #4cc9f0;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Lightbox (Büyüyen Resim) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 20px rgba(76, 201, 240, 0.5);
+            border: 2px solid #4cc9f0;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* --- SON --- */
+
         footer {
             text-align: center;
             padding: 50px;
@@ -85,7 +155,7 @@
 <body>
 
     <nav>
-        <div class="logo">AYAP-1 PROJECT</div>
+        <div class="logo">İSTİKBAL UZAY</div>
         <div>
             <a href="#about" style="color: white; text-decoration: none; margin-left: 20px;">Hakkında</a>
             <a href="#media" style="color: white; text-decoration: none; margin-left: 20px;">Galeri</a>
@@ -93,9 +163,9 @@
     </nav>
 
     <header class="hero">
-        <h1>AYAP-1: Sonsuz Boşluk</h1>
-        <p>Türkiye'nin Ay Araştırma Programı'ndan esinlenen, gerçekçi fizik tabanlı bir uzay simülasyonu deneyimi.</p>
-        <a href="#" class="btn">Hemen Oyna</a>
+        <h1>İstikbal Uzay: Hikaye Sahnesi</h1>
+        <p>Unity ile geliştirilen, "AYAP-1" projesinin "Milli Hibrit İtki Sistemi" üzerine kurulu heyecan verici bir uzay simülasyonu.</p>
+        <a href="#media" class="btn">Ekran Görüntülerini İncele</a>
     </header>
 
     <section class="features" id="about">
@@ -105,17 +175,48 @@
         </div>
         <div class="card">
             <h3>Detaylı Grafikler</h3>
-            <p>Ay'ın karanlık yüzünü ve kraterlerini en ince ayrıntısına kadar keşfet.</p>
+            <p>Unity 6 LTS gücüyle, Ay'ın karanlık yüzünü en ince ayrıntısına kadar keşfet.</p>
         </div>
         <div class="card">
-            <h3>Teknofest 2026</h3>
-            <p>Geleceğin teknolojilerini bugünden kodla ve sınırları zorla.</p>
+            <h3>Geleceği Kodla</h3>
+            <p>"Milli Hibrit İtki Sistemi" gibi gerçek teknolojileri bir simülasyonda deneyimle.</p>
         </div>
     </section>
 
+    <section class="gallery" id="media">
+        <h2>Geliştirme Sürecinden Görüntüler</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('unity_screenshot.png')">
+                <img src="unity_screenshot.png" alt="İstikbal Uzay - Unity Ekran Görüntüsü 1">
+            </div>
+            </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img src="" alt="Büyütülmüş Görsel" id="lightbox-img">
+    </div>
+
     <footer>
-        <p>&copy; 2026 AYAP-1 Oyun Projesi. Tüm hakları saklıdır.</p>
+        <p>&copy; 2026 İstikbal Uzay Oyun Projesi. Tüm hakları saklıdır.</p>
     </footer>
 
-</body>
+    <script>
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Dışarı tıklayınca kapatma
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target !== document.getElementById('lightbox-img')) {
+                closeLightbox();
+            }
+        });
+    </script>
+    </body>
 </html>
